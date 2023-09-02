@@ -12,7 +12,7 @@ input {
 
 /* General styles for the layout */
 body {
-    background-color: #f0f0f0;
+    background-color: #f2f2f2;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,20 +57,19 @@ body {
 
 /* Button styles */
 .button {
-    background-color: #fff;
-    color: #333;
-    border: 1px solid #ccc;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     margin: 5px 0;
-    transition: background-color 0.3s, color 0.3s, border 0.3s;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 14px;
 }
 
 .button:hover {
     background-color: #ff6600;
-    color: #fff;
-    border: 1px solid #ff6600;
 }
 
 /* Cube styles */
@@ -99,6 +98,7 @@ body {
     margin: 5px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 14px;
 }
 
 /* Generate button styles */
@@ -111,11 +111,11 @@ body {
     cursor: pointer;
     margin: 20px 0;
     transition: background-color 0.3s, color 0.3s;
+    font-size: 16px;
 }
 
 .generate-button:hover {
     background-color: #e65700;
-    color: #fff;
 }
 
 /* Error message styles */
@@ -123,6 +123,7 @@ body {
     color: #e74c3c;
     display: none;
     margin-top: 10px;
+    font-size: 14px;
 }
 
 /* Generated code display styles */
@@ -130,6 +131,7 @@ body {
     margin-top: 10px;
     font-family: monospace;
     white-space: pre-wrap;
+    font-size: 14px;
 }
 
 /* Slider styles (customize as needed) */
