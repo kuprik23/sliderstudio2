@@ -7,10 +7,11 @@ const slidersContainer = document.querySelector('.sliders');
 const aiSelect = document.getElementById('ai-select');
 const rigSelect = document.getElementById('rig-select');
 const outputSelect = document.getElementById('output-select');
+const codeLanguageSelect = document.getElementById('code-language');
 const generateButton = document.getElementById('generate-button');
 const errorMessage = document.getElementById('error-message');
 const generatedCode = document.getElementById('generated-code');
-const rightPanel = document.querySelector('.right-panel');
+const codeWindow = document.querySelector('.code-window');
 
 // Data
 const sections = {
@@ -62,11 +63,11 @@ function generateCode() {
     const selectedAI = aiSelect.value;
     const selectedRig = rigSelect.value;
     const selectedOutput = outputSelect.value;
+    const selectedLanguage = codeLanguageSelect.value;
 
-    if (!selectedAI || !selectedRig || !selectedOutput) {
+    if (!selectedAI || !selectedRig || !selectedOutput || !selectedLanguage) {
         // Show an error message and return if any selection is missing
         errorMessage.style.display = 'block';
-        generatedCode.innerHTML = '';
         return;
     }
 
@@ -76,11 +77,15 @@ function generateCode() {
     AI: ${selectedAI}
     Rig: ${selectedRig}
     Output: ${selectedOutput}
+    Language: ${selectedLanguage}
     // Add more code generation logic here
   `;
 
     generatedCode.innerText = code;
     errorMessage.style.display = 'none';
+
+    // Show the code window
+    codeWindow.style.display = 'block';
 }
 
 // Initialize rig and output selects

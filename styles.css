@@ -133,6 +133,29 @@ body {
     white-space: pre-wrap;
     font-size: 14px;
 }
+/* Add styles for the code window */
+.code-window {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #f2f2f2;
+    border-left: 1px solid #ccc;
+    display: none;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    z-index: 1;
+}
+
+/* Style for the generated code */
+.generated-code {
+    font-family: monospace;
+    font-size: 14px;
+    white-space: pre-wrap;
+}
 
 /* Slider styles (customize as needed) */
 .sliders {

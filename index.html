@@ -38,16 +38,23 @@
                     <option value="" disabled selected>Select Output</option>
                     <!-- Add output options here -->
                 </select>
+                <label for="code-language">Select Code Language:</label>
+                <select id="code-language" class="select" placeholder="Select Code Language">
+                    <option value="javascript">JavaScript</option>
+                    <option value="python">Python</option>
+                </select>
             </div>
             <button id="generate-button" class="generate-button">Generate Code</button>
             <div id="error-message" class="error-message">Please select AI, rig, and output.</div>
-            <div id="generated-code" class="generated-code"></div>
         </div>
         <div class="right-panel">
             <div class="sliders">
                 <!-- 9 sliders will be dynamically added here -->
             </div>
         </div>
+    </div>
+    <div class="code-window">
+        <div id="generated-code" class="generated-code"></div>
     </div>
     <script src="script.js"></script>
 </body>
