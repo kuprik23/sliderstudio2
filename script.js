@@ -1,8 +1,7 @@
-// JavaScript code for the updated layout and functionality
+// JavaScript code for the updated layout and functionality using Three.js
 
 // DOM Elements
 const buttons = document.querySelectorAll('.button');
-const middlePanel = document.querySelector('.middle-panel');
 const slidersContainer = document.querySelector('.sliders');
 const aiSelect = document.getElementById('ai-select');
 const rigSelect = document.getElementById('rig-select');
@@ -12,6 +11,11 @@ const generateButton = document.getElementById('generate-button');
 const errorMessage = document.getElementById('error-message');
 const generatedCode = document.getElementById('generated-code');
 const codeWindow = document.querySelector('.code-window');
+const canvasContainer = document.querySelector('.canvas-container');
+
+// Three.js variables
+let scene, camera, renderer, cube;
+const cubeRotation = { x: 0, y: 0, z: 0 };
 
 // Data
 const sections = {
@@ -33,20 +37,39 @@ buttons.forEach((button) => {
 
 generateButton.addEventListener('click', generateCode);
 
+// Initialize Three.js
+init();
+
+function init() {
+    scene = new THREE.Scene();
+    camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+    renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('cube-canvas') });
+    renderer.setSize(canvasContainer.clientWidth, canvasContainer.clientHeight);
+
+    const geometry = new THREE.BoxGeometry();
+    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+    cube = new THREE.Mesh(geometry, material);
+    scene.add(cube);
+
+    camera.position.z = 5;
+}
+
+function animate() {
+    requestAnimationFrame(animate);
+
+    cube.rotation.x += 0.01;
+    cube.rotation.y += 0.01;
+
+    renderer.render(scene, camera);
+}
+
+animate();
+
 // Functions
 function handleButtonClick(section) {
     // Clear previous selections and content
-    middlePanel.innerHTML = '';
     slidersContainer.innerHTML = '';
-
-    // Create and display content based on the selected section
-    const sectionContent = sections[section];
-    middlePanel.innerHTML = sectionContent;
-
-    // Move the buttons above the sliders
-    buttons.forEach((button) => {
-        button.style.transform = 'translateY(0)';
-    });
 
     // Create sliders based on the selected section
     for (let i = 1; i <= 9; i++) {
@@ -55,8 +78,21 @@ function handleButtonClick(section) {
         slider.min = '0';
         slider.max = '100';
         slider.value = '50';
+        slider.addEventListener('input', () => handleSliderChange());
         slidersContainer.appendChild(slider);
     }
+
+    // Move the buttons above the sliders
+    buttons.forEach((button) => {
+        button.style.transform = 'translateY(0)';
+    });
+}
+
+function handleSliderChange() {
+    // Update cube rotation based on slider values
+    cube.rotation.x = slidersContainer.children[0].value / 50;
+    cube.rotation.y = slidersContainer.children[1].value / 50;
+    cube.rotation.z = slidersContainer.children[2].value / 50;
 }
 
 function generateCode() {
