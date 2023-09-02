@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Emersa Studio</title>
+</head>
+<body>
+    <div class="left-panel">
+        <div class="buttons">
+            <button class="button" data-section="HEAD">HEAD</button>
+            <button class="button" data-section="FACE">FACE</button>
+            <button class="button" data-section="BODY">BODY</button>
+            <button class="button" data-section="HAND/LEGS">HAND/LEGS</button>
+            <button class="button" data-section="FEET/HANDS">FEET/HANDS</button>
+            <button class="button" data-section="CLOTHES">CLOTHES</button>
+        </div>
+    </div>
+    <div class="middle-panel">
+        <div class="cube"></div>
+        <div class="sliders">
+            <!-- Sliders will be dynamically added here -->
+        </div>
+        <div class="controls">
+            <!-- AI, rig, and output selection will be dynamically added here -->
+        </div>
+    </div>
+    <div class="right-panel">
+        <div class="sliders">
+            <!-- 20 box-like sliders will be dynamically added here -->
+        </div>
+    </div>
+    <div class="bottom-panel">
+        <div class="generate-button">
+            <button id="generate-code">Generate Code</button>
+            <div id="error-message" class="error-message">Please select AI, rig, and output.</div>
+        </div>
+        <div id="generated-code" class="generated-code"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
