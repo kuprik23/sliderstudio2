@@ -1,139 +1,58 @@
-/* Reset some default styles */
-body,
-button,
-select,
-input {
-    margin: 0;
-    padding: 0;
-    border: none;
-    outline: none;
-    font-family: Arial, sans-serif;
+/* Update the styles for the canvas displaying the avatar */
+#avatar-canvas {
+    width: 100%; /* Adjust the width as needed */
+    height: 400px; /* Adjust the height as needed */
+    background-color: #f2f2f2; /* Background color for the canvas */
 }
 
-/* General styles for the layout */
-body {
-    background-color: #f2f2f2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-}
+/* Adjust the styles for other elements as needed */
+/* For example, the buttons, controls, and code window */
 
-.app-container {
-    display: flex;
-    flex-direction: row;
-    background-color: #fff;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-    max-width: 1200px;
-    width: 100%;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.left-panel,
-.middle-panel,
-.right-panel {
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.left-panel {
-    flex: 1;
-}
-
-.middle-panel {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.right-panel {
-    flex: 1;
-    overflow-y: auto;
-}
-
-/* Button styles */
+/* Buttons on the left panel */
 .button {
-    background-color: #3498db;
-    color: #fff;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    background-color: #0078d4; /* Button background color */
+    color: #fff; /* Button text color */
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
     cursor: pointer;
-    margin: 5px 0;
-    transition: background-color 0.3s, color 0.3s;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .button:hover {
-    background-color: #ff6600;
+    background-color: #005ea2; /* Hover background color */
 }
 
-/* Cube styles */
-.cube {
-    width: 150px;
-    height: 150px;
-    background-color: #3498db;
-    margin: 20px auto;
-    border-radius: 10px;
-    animation: rotate 3s infinite linear;
+/* Sliders and controls */
+.sliders {
+    margin-top: 20px; /* Adjust the spacing */
 }
 
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-/* Select styles */
 .select {
     width: 100%;
     padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
+    margin-bottom: 10px;
+    font-size: 16px;
 }
 
-/* Generate button styles */
 .generate-button {
-    background-color: #ff6600;
-    color: #fff;
+    width: 100%;
+    padding: 10px;
+    background-color: #0078d4; /* Button background color */
+    color: #fff; /* Button text color */
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
     cursor: pointer;
-    margin: 20px 0;
-    transition: background-color 0.3s, color 0.3s;
     font-size: 16px;
 }
 
 .generate-button:hover {
-    background-color: #e65700;
+    background-color: #005ea2; /* Hover background color */
 }
 
-/* Error message styles */
-.error-message {
-    color: #e74c3c;
-    display: none;
-    margin-top: 10px;
-    font-size: 14px;
-}
-
-/* Generated code display styles */
-.generated-code {
-    margin-top: 10px;
-    font-family: monospace;
-    white-space: pre-wrap;
-    font-size: 14px;
-}
-/* Add styles for the code window */
+/* Code window */
 .code-window {
     position: absolute;
     top: 0;
@@ -150,14 +69,8 @@ body {
     z-index: 1;
 }
 
-/* Style for the generated code */
 .generated-code {
     font-family: monospace;
     font-size: 14px;
     white-space: pre-wrap;
-}
-
-/* Slider styles (customize as needed) */
-.sliders {
-    /* Add styles for the sliders here */
 }
